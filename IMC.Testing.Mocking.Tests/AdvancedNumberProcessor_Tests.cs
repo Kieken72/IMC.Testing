@@ -70,7 +70,7 @@ namespace IMC.Testing.Mocking.Tests
             Action act = () => model= processor.GetReport();
 
             //Assert
-            Assert.Throws<Exception>(act);
+            Assert.Throws<FileNotFoundException>(act);
         }
 
         [Fact]
