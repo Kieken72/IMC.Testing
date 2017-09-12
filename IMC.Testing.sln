@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMC.Testing.HelloWorld", "IMC.Testing.HelloWorld\IMC.Testing.HelloWorld.csproj", "{C78BCEB7-E2FA-4AC1-B301-A58473863F23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMC.Testing.HelloWorld", "IMC.Testing.HelloWorld\IMC.Testing.HelloWorld.csproj", "{C78BCEB7-E2FA-4AC1-B301-A58473863F23}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Hello World", "01 Hello World", "{7ADCBEDD-77F6-40AC-8E7B-8A434995CFB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMC.Testing.HelloWorld.Tests", "IMC.Testing.HelloWorld.Tests\IMC.Testing.HelloWorld.Tests.csproj", "{06F0016F-0F3E-4ADF-B02A-4992401D8901}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMC.Testing.HelloWorld.Tests", "IMC.Testing.HelloWorld.Tests\IMC.Testing.HelloWorld.Tests.csproj", "{06F0016F-0F3E-4ADF-B02A-4992401D8901}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Mocking", "02 Mocking", "{0FFB608B-30F5-4990-931A-75BAAD40A4D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMC.Testing.Mocking", "IMC.Testing.Mocking\IMC.Testing.Mocking.csproj", "{8BB041F1-5C49-4F97-B314-9FAF52135C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMC.Testing.Mocking.Tests", "IMC.Testing.Mocking.Tests\IMC.Testing.Mocking.Tests.csproj", "{56311335-AAFF-41B0-9FEE-A3B47F4491D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +29,14 @@ Global
 		{06F0016F-0F3E-4ADF-B02A-4992401D8901}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06F0016F-0F3E-4ADF-B02A-4992401D8901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06F0016F-0F3E-4ADF-B02A-4992401D8901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB041F1-5C49-4F97-B314-9FAF52135C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB041F1-5C49-4F97-B314-9FAF52135C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB041F1-5C49-4F97-B314-9FAF52135C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB041F1-5C49-4F97-B314-9FAF52135C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56311335-AAFF-41B0-9FEE-A3B47F4491D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56311335-AAFF-41B0-9FEE-A3B47F4491D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56311335-AAFF-41B0-9FEE-A3B47F4491D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56311335-AAFF-41B0-9FEE-A3B47F4491D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C78BCEB7-E2FA-4AC1-B301-A58473863F23} = {7ADCBEDD-77F6-40AC-8E7B-8A434995CFB5}
 		{06F0016F-0F3E-4ADF-B02A-4992401D8901} = {7ADCBEDD-77F6-40AC-8E7B-8A434995CFB5}
+		{8BB041F1-5C49-4F97-B314-9FAF52135C94} = {0FFB608B-30F5-4990-931A-75BAAD40A4D2}
+		{56311335-AAFF-41B0-9FEE-A3B47F4491D7} = {0FFB608B-30F5-4990-931A-75BAAD40A4D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B07A99E3-DC8A-41E8-869A-883170E06835}
