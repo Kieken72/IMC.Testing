@@ -3,4 +3,6 @@
 
 * 01 - Hello World
 * 02 - Mocking
-* 03 - TDD [Question to work out](http://osherove.com/tdd-kata-1/)
+* 03 - TDD (http://osherove.com/tdd-kata-1/)
+* 04 - Fluent Assertions And Auto Fixture
+* 05 - Builder (http://www.natpryce.com/articles/000714.html)
