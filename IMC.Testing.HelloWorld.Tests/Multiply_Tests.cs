@@ -12,8 +12,6 @@ namespace IMC.Testing.HelloWorld.Tests
 
         public Multiply_Tests()
         {
-            _a = 5;
-            _b = 5;
             _functions = new Functions();
         }
 
@@ -22,13 +20,15 @@ namespace IMC.Testing.HelloWorld.Tests
         public void Multiply_By_Five_Should_Give_TwentyFive()
         {
             //Setup
+            _a = 5;
+            _b = 5;
             int c;
 
             //Act
             c = _functions.Multiply(_a, _b);
 
             //Assert
-            Assert.Equal(c, 15);
+            Assert.Equal(c, 25);
         }
 
     }
