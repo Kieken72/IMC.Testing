@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using FluentAssertions;
 using Xunit;
 
-namespace IMC.Testing.TDD.Tests
+namespace IMC.Testing.AutoFixtureAndFluentAssertions.Tests
 {
     public class StringCalculator_Simple_Tests_003
     {
@@ -23,7 +22,7 @@ namespace IMC.Testing.TDD.Tests
             var number = _calulator.Add("5\\n5,5");
 
             //Assert
-            Assert.Equal(15, number);
+            number.Should().Be(15);
         }
     }
 }
