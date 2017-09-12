@@ -12,16 +12,35 @@ namespace IMC.Testing.HelloWorld.Tests
         {
             _functions = new Functions();
         }
+
+
+        [Fact]
+        public void Divide_By_Five_Should_Not_Throw_Exception()
+        {
+            //Setup
+            int a, b;
+            double c;
+            a = 5;
+            b = 5;
+
+            //Act
+            c = _functions.Divide(a, b);
+
+            //Assert
+            Assert.Equal(c,1);
+        }
+
         [Fact]
         public void Divide_By_Zero_Should_Throw_Exception()
         {
             //Setup
-            double a, b, c;
-            a = 1;
+            int a, b;
+            double c;
+            a = 5;
             b = 0;
 
             //Act
-            Action act = () => c =_functions.Divide(a, b);
+            Action act = () => c = _functions.Divide(a, b);
 
             //Assert
             Assert.Throws<DivideByZeroException>(act);
