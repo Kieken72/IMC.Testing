@@ -7,6 +7,17 @@ namespace IMC.Testing.TDD
 {
     public class StringCalulator
     {
+        private readonly List<string> _delimiters;
+
+        public StringCalulator()
+        {
+            _delimiters = new List<string>()
+            {
+                ",",
+                @"\n"
+            };
+        }
+
         public int Add(string numbersString)
         {
             if (numbersString == "")
@@ -14,41 +25,9 @@ namespace IMC.Testing.TDD
                 return 0;
             }
 
-            var delimiters = new List<string>()
-            {
-                @"\n"
-            };
-            var differentDelimiterRegex = new Regex(@"\\\\(.*?)\\n");
-            var multipleDifferentDelimiterRegex = new Regex(@"\\\\(\[(.*?)\])*?\\n");
-            var matchMultuple = multipleDifferentDelimiterRegex.Match(numbersString);
-            var match = differentDelimiterRegex.Match(numbersString);
+            numbersString = ExtractCustomerDelimiters(numbersString);
 
-            if (matchMultuple.Success)
-            {
-                var multipleDelimiterRegex = new Regex(@"\[(.*?)\]");
-                var multipleDelimiters = multipleDelimiterRegex.Matches(matchMultuple.Value);
-                numbersString = numbersString.Replace(matchMultuple.Value, "");
-                if (multipleDelimiters.Count>0)
-                {
-                    foreach (Match delimiter in multipleDelimiters)
-                    {
-                        var del = delimiter.Value.Replace("[", "").Replace("]", "");
-                        delimiters.Add(del);
-                    }
-                }
-
-            }
-            else if (match.Success)
-            {
-                var delimiter = match.Value.Replace(@"\\", "").Replace(@"\n", "");
-                numbersString=numbersString.Replace(match.Value, "");
-                delimiters.Add(delimiter);
-            }
-            else
-            {
-                delimiters.Add(",");
-            }
-            var numbers = numbersString.Split(delimiters.ToArray(), StringSplitOptions.None);
+            var numbers = numbersString.Split(_delimiters.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
             var total = 0;
             var hasNegativeNumbers = false;
@@ -81,6 +60,41 @@ namespace IMC.Testing.TDD
                 throw new Exception("negatives not allowed - " + string.Join(",", negativeNumbers));
             }
             return total;
+        }
+
+        private string ExtractCustomerDelimiters(string inputString)
+        {
+            var numerStringWithoutDelimiters = inputString;
+            //Multiple
+            var multipleDifferentDelimiterRegex = new Regex(@"\\\\(\[(.*?)\])*?\\n");
+            var matchMultuple = multipleDifferentDelimiterRegex.Match(inputString);
+            if (matchMultuple.Success)
+            {
+                var multipleDelimiterRegex = new Regex(@"\[(.*?)\]");
+                var multipleDelimiters = multipleDelimiterRegex.Matches(matchMultuple.Value);
+                numerStringWithoutDelimiters = inputString.Replace(matchMultuple.Value, "");
+                if (multipleDelimiters.Count > 0)
+                {
+                    foreach (Match delimiter in multipleDelimiters)
+                    {
+                        var del = delimiter.Value.Replace("[", "").Replace("]", "");
+                        _delimiters.Add(del);
+                    }
+                }
+            }
+            else
+            {
+                //Single
+                var differentDelimiterRegex = new Regex(@"\\\\(.*?)\\n");
+                var match = differentDelimiterRegex.Match(inputString);
+                if (match.Success)
+                {
+                    var delimiter = match.Value.Replace(@"\\", "").Replace(@"\n", "");
+                    numerStringWithoutDelimiters = inputString.Replace(match.Value, "");
+                    _delimiters.Add(delimiter);
+                }
+            }
+            return numerStringWithoutDelimiters;
         }
     }
 }
