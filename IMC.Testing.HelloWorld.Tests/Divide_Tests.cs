@@ -26,7 +26,7 @@ namespace IMC.Testing.HelloWorld.Tests
             c = _functions.Divide(a, b);
 
             //Assert
-            Assert.Equal(c,1);
+            Assert.Equal(1, c);
         }
 
         [Fact]
@@ -64,7 +64,7 @@ namespace IMC.Testing.HelloWorld.Tests
             c = _functions.Divide(a, b);
 
             //Assert
-            Assert.Equal(c, result);
+            Assert.Equal(result, c);
 
         }
     }

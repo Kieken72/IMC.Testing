@@ -67,8 +67,8 @@ namespace IMC.Testing.Mocking.Tests
             var model = __processor.GetReport();
 
             //Assert
-            Assert.Equal(model.NumberCount, 3);
-            Assert.Equal(model.Average, (1 + 5 + 10) / 3.0);
+            Assert.Equal(3, model.NumberCount);
+            Assert.Equal((1 + 5 + 10) / 3.0, model.Average);
         }
 
         [Fact]

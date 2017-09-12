@@ -46,7 +46,7 @@ namespace IMC.Testing.Mocking.Tests
 
             //Assert
             Assert.NotNull(model);
-            Assert.Equal(model.NumberCount,2);
+            Assert.Equal(2, model.NumberCount);
         }
 
     }

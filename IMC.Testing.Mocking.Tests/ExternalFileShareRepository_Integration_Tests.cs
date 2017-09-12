@@ -35,7 +35,7 @@ namespace IMC.Testing.Mocking.Tests
 
             //Assert
             Assert.NotNull(list);
-            Assert.Equal(list.Count(), _list.Count());
+            Assert.Equal(_list.Count(), list.Count());
         }
 
         [Fact]

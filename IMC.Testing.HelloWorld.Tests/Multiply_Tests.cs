@@ -28,7 +28,7 @@ namespace IMC.Testing.HelloWorld.Tests
             c = _functions.Multiply(_a, _b);
 
             //Assert
-            Assert.Equal(c, 25);
+            Assert.Equal(25, c);
         }
 
     }
