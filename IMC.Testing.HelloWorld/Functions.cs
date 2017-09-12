@@ -4,10 +4,15 @@ namespace IMC.Testing.HelloWorld
 {
     public class Functions
     {
-        public double Divide(int a, int b)
+        public int Divide(int dividend, int divisor)
         {
-            return a / b;
+            return dividend / divisor;
         }
+
+        public int Multiply(int multiplicand, int multiplier)
+        {
+            return multiplicand * multiplier;
+        } 
 
 
     }
